@@ -1,0 +1,23 @@
+{
+  "name": "type-challenges-solutions",
+  "version": "1.0.0",
+  "description": "Collection of TypeScript type challenges",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cansiny0320/type-challenges-solutions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cansiny0320/type-challenges-solutions/issues"
+  },
+  "homepage": "https://github.com/Cansiny0320/type-challenges-solutions#readme",
+  "dependencies": {
+    "@type-challenges/utils": "^0.1.1"
+  }
+}
