@@ -1,7 +1,7 @@
 #!/usr/bin/env zx
 const content = await $`git status`
 
-const nameReg = /\d+-((medium)|(hard)|(easy))-\w+/i
+const nameReg = /\d+-((medium)|(hard)|(easy))(-\w+)+/i
 
 await $`clear`
 
