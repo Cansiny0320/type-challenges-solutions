@@ -26,7 +26,7 @@
 
 /* _____________ 你的代码 _____________ */
 
-type Last<T extends any[]> = T extends [...infer args, infer P] ? P : T
+type Last<T extends unknown[]> = T extends [...unknown[], infer P] ? P : T
 
 /* _____________ 测试用例 _____________ */
 import { Equal, Expect } from '@type-challenges/utils'
