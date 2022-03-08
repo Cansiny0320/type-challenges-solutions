@@ -12,9 +12,7 @@
 
 /* _____________ 你的代码 _____________ */
 
-type MyParameters<T extends (...args: any[]) => any> = T extends (
-  ...args: infer P
-) => any
+type MyParameters<T extends Function> = T extends (...args: infer P) => unknown
   ? P
   : never
 
