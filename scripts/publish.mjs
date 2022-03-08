@@ -1,7 +1,11 @@
 #!/usr/bin/env zx
-const diff = await $`git diff --name-only HEAD~ HEAD`
+const content = await $`git status`
 
-const dirName = diff.stdout.split('/')[1]
+const nameReg = /\d+-((medium)|(hard)|(easy))-\w+/i
 
+await $`clear`
+
+const [dirName] = content.stdout.match(nameReg)
 await $`git add solutions/${dirName}/solution.ts`
-await $`git commit -m "${dirName}"`
+await $`git commit -m "feat: ${dirName}"`
+await $`git push`
