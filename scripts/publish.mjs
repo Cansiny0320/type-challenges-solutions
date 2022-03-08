@@ -8,4 +8,3 @@ await $`clear`
 const [dirName] = content.stdout.match(nameReg)
 await $`git add solutions/${dirName}/solution.ts`
 await $`git commit -m "feat: ${dirName}"`
-await $`git push`
