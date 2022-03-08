@@ -4,7 +4,8 @@
   "description": "Collection of TypeScript type challenges",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "new":"node scripts/new.mjs",
+    "publish": "zx scripts/publish.mjs"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,8 @@
   "homepage": "https://github.com/Cansiny0320/type-challenges-solutions#readme",
   "dependencies": {
     "@type-challenges/utils": "^0.1.1"
+  },
+  "devDependencies": {
+    "zx": "^5.2.0"
   }
 }
