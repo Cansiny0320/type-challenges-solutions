@@ -25,7 +25,7 @@
 
 /* _____________ 你的代码 _____________ */
 
-type MyReturnType<T extends (...args: any[]) => any> = T extends (
+type MyReturnType<Func extends Function> = Func extends (
   ...args: any[]
 ) => infer P
   ? P
