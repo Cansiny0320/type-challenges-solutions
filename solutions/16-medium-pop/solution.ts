@@ -28,16 +28,16 @@
 
 /* _____________ 你的代码 _____________ */
 
-type Pop<T extends any[]> = T extends [...infer args, infer P] ? [...args] : T
-type Push<T extends any[], K> = [...T, K]
-type Shift<T extends any[]> = T extends [infer P, ...infer args] ? [...args] : T
-type Unshift<T extends any[], K> = [K, ...T]
+type Pop<T extends unknown[]> = T extends [...infer Rest, unknown] ? Rest : T
+type Push<T extends unknown[], K> = [...T, K]
+type Shift<T extends unknown[]> = T extends [unknown, ...infer Rest] ? Rest : T
+type Unshift<T extends unknown[], K> = [K, ...T]
 
 /* _____________ 测试用例 _____________ */
 import { Equal, Expect } from '@type-challenges/utils'
 
 type cases = [
-  Expect<Equal<Pop<[3, 2, 1]>, [3, 2]>>,
+  Expect<Equal<Pop<[]>, []>>,
   Expect<Equal<Pop<['a', 'b', 'c', 'd']>, ['a', 'b', 'c']>>,
   Expect<Equal<Push<['a', 'b', 'c'], 'd'>, ['a', 'b', 'c', 'd']>>,
   Expect<Equal<Shift<['a', 'b', 'c']>, ['b', 'c']>>,
