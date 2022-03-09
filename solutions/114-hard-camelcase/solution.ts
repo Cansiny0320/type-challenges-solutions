@@ -19,9 +19,10 @@
 
 /* _____________ Your Code Here _____________ */
 
-type CamelCase<S extends string> = S extends `${infer First}_${infer Rest}`
-  ? `${Lowercase<First>}${Capitalize<CamelCase<Rest>>}`
-  : Lowercase<S>
+type CamelCase<Str extends string> =
+  Str extends `${infer Left}_${infer Right}${infer Rest}`
+    ? `${Left}${Uppercase<Right>}${CamelCase<Rest>}`
+    : Str
 
 /* _____________ Test Cases _____________ */
 import { Equal, Expect } from '@type-challenges/utils'
