@@ -18,9 +18,9 @@
 
 /* _____________ 你的代码 _____________ */
 
-type IsEqual<F, U> = (<T>() => T extends F ? true : false) extends <
-  T
->() => T extends U ? true : false
+type IsEqual<X, Y> = (<T>() => T extends X ? 1 : 2) extends <T>() => T extends Y
+  ? 1
+  : 2
   ? true
   : false
 
